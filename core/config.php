@@ -1,0 +1,6 @@
+<?php
+////////////////////////////////////////////////////////////////////////////////
+define('HOST', 'localhost');
+define('DB', 'locatia');
+define('USER', 'root');
+define('PASS', '');

@@ -1,0 +1,13 @@
+{
+  "name": "grid",
+  "version": "1.0.0",
+  "description": "Grid learn",
+  "main": "views/appartment/index.php",
+  "scripts": {
+    "compile": "node-sass sass/main.scss public/css/style.css -w",
+    "live": "live-server --browser=chrome"
+  },
+  "author": "Webbog",
+  "license": "ISC",
+  "devDependencies": {}
+}

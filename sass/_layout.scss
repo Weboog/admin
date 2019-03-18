@@ -1,0 +1,24 @@
+.aside{
+  @media only screen and (max-width: $bp-medium) {
+    width: 7rem;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12rem;
+  height: 100vh;
+}
+.header{
+  @media only screen and (max-width: $bp-medium) {
+    left: 7rem;
+    width: calc(100% - 7rem);
+  }
+  position: fixed;
+  top: 0;
+  left: 12rem;
+  width: calc(100% - 12rem);
+  height: 6rem;
+  padding: 0 2rem;
+}
+.content{
+}

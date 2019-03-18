@@ -1,0 +1,28 @@
+*, 
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+input, select, textarea{
+    outline: none;
+    font-family: inherit;
+}
+
+html{
+    //Defining rem
+    font-size: 62.5%;
+    font-family: $font-cuprum;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+body{
+  background-color: $color-grey-bg;
+}
