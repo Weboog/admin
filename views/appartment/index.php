@@ -306,12 +306,28 @@
     <a href="#">&times;</a>
 </div>
 <div class="popup__content">
+  <?php
+  if (isset($data)) {
+    if (count($data['fail']) > 0) {
+        $status = 'fail';
+    }
+    if (count($data['success']) > 0) {
+        $status = 'success';
+        echo sprintf('<p class="message %s">%s</p>', $status, $data['success'][0]);
+    }
+  }
+  ?>
   <section class="appart_form">
       <h2 class="head_form">Ajouter un nouvel appartement</h2>
       <form action="" method="post" name="new_appart" enctype="multipart/form-data">
         <div>
           <div class="owner">
               <h3 class="group_label">Propriétaire</h3>
+              <?php
+                if (array_key_exists('owner', $data['fail'])) {
+                  echo '<p class="fail">Choisissez un propriétaire</p>';
+                }
+              ?>
               <select name="owner" id="owner">
                   <option value="0">Propriétaire</option>
                   <option value="1">Abell</option>
@@ -404,8 +420,9 @@
                 <div class="sample_images"></div>
             </div>
           </div>
-        </div>
           <input type="submit" name="submit" value="Enregistrer">
+        </div>
+
       </form>
   </section>
 </div>

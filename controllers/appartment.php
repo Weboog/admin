@@ -10,7 +10,8 @@ class Appartment extends Controller
     private static $MAX_SIZE = 3584000;
 
     public function index(){
-        $this->render('index');
+      $status = $this->add();
+      $this->render('index', $status);
     }
 
     public function all(){
@@ -34,19 +35,19 @@ class Appartment extends Controller
             //Verify whole form entries
             foreach ($_POST as $key => $value) {
                 if ($value === '0') {
-                    $status['fail'][] = 'Sélectionnez un '.$key.'.';
+                    $status['fail'][$key] = 'Sélectionnez un '.$key.'.';
                 }
                 if (empty($value)) {
-                    $status['fail'][] = 'Le champs '.$key.' est vide.';
+                    $status['fail'][$key] = 'Le champs '.$key.' est vide.';
                 }
             }
             //Verify if submitted gallery is not empty
             if ($_FILES['gallery']['name'][0] === '') {
-                $status['fail'][] = 'Vous n\'avez sélectionné aucune image de gallerie.';
+                $status['fail']['gallery'] = 'Vous n\'avez sélectionné aucune image de gallerie.';
             }
             //Verify if submitted thumbs is not empty
             if ($_FILES['thumbs']['name'][0] === '') {
-                $status['fail'][] = 'Vous n\'avez sélectionné aucune miniature.';
+                $status['fail']['thumbs'] = 'Vous n\'avez sélectionné aucune miniature.';
             }
 
             //Verify each file to match size and type
@@ -56,10 +57,10 @@ class Appartment extends Controller
                 $size = $_FILES['thumbs']['size'][$i];
 
                 if (!in_array($ext, self::$EXTENSIONS)) {
-                    $status['fail'][] = 'Image : ' . pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME) . ' de type ' . strtoupper($ext) . '. Types autorisés : JPG ou JPEG.';
+                    $status['fail']['thumb'] = 'Image : ' . pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME) . ' de type ' . strtoupper($ext) . '. Types autorisés : JPG ou JPEG.';
                 }
                 if ($size > self::$MAX_SIZE) {
-                    $status['fail'][] = 'Image volumineuse : '.pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME).', taille : '.(floor($size / 1024)).' Ko. Taille max '.(floor(self::$MAX_SIZE/1024)).' Ko.';
+                    $status['fail']['thumb'] = 'Image volumineuse : '.pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME).', taille : '.(floor($size / 1024)).' Ko. Taille max '.(floor(self::$MAX_SIZE/1024)).' Ko.';
                 }
             }
 
@@ -70,10 +71,10 @@ class Appartment extends Controller
                 $size = $_FILES['gallery']['size'][$i];
 
                 if (!in_array($ext, self::$EXTENSIONS)) {
-                    $status['fail'][] = 'Image : ' . pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME) . ' de type ' . strtoupper($ext) . '. Types autorisés : JPG ou JPEG.';
+                    $status['fail']['gallery'] = 'Image : ' . pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME) . ' de type ' . strtoupper($ext) . '. Types autorisés : JPG ou JPEG.';
                 }
                 if ($size > self::$MAX_SIZE) {
-                    $status['fail'][] = 'Image volumineuse : '.pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME).', taille : '.(floor($size / 1024)).' Ko. Taille max '.(floor(self::$MAX_SIZE/1024)).' Ko.';
+                    $status['fail']['gallery'] = 'Image volumineuse : '.pathinfo($_FILES['gallery']['name'][$i], PATHINFO_FILENAME).', taille : '.(floor($size / 1024)).' Ko. Taille max '.(floor(self::$MAX_SIZE/1024)).' Ko.';
                 }
             }
 
@@ -117,11 +118,13 @@ class Appartment extends Controller
                 for ($i = 0; $i < count($_FILES['gallery']['name']); $i++) {
                     move_uploaded_file($_FILES['gallery']['tmp_name'][$i], self::$DIR . $serial.$last_id.'-'.($i+1).'.jpg');
                 }
-                $status['success'][] = 'Apparttement ajouté avec succès.';
+                $status['success'][] = 'Appartement ajouté avec succès.';
             }
         }
         //Always render add page
-        $this->render('add', $status);
+        //$this->render('index', $status);
+        //print_r($status);
+        return $status;
     }
 
     private function quote($variable){

@@ -497,6 +497,9 @@ header {
     border-radius: 5px;
     padding: 2rem 0;
     color: white; }
+    .popup__content .fail {
+      color: red;
+      font-size: 1.2rem; }
   .popup__names {
     text-transform: uppercase;
     text-align: center;
@@ -654,7 +657,8 @@ header {
   display: grid;
   grid-gap: 2rem;
   grid-auto-flow: column;
-  justify-content: center; }
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); }
   .appart_form select, .appart_form input, .appart_form textarea {
     padding: 0.5rem 1rem;
     border: none;
@@ -662,6 +666,20 @@ header {
     color: #3c3c3c; }
     .appart_form select:focus, .appart_form input:focus, .appart_form textarea:focus {
       border-bottom-color: #4169E1; }
+  .appart_form input[type='submit'] {
+    background-color: #00B6FF;
+    color: #FFF;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    align-self: end;
+    justify-self: right;
+    border-radius: 3px;
+    border-bottom: none;
+    cursor: pointer; }
+  .appart_form textarea {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem; }
   .appart_form form {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -700,15 +718,7 @@ header {
     font-size: 1.5rem;
     color: #4169E1;
     display: flex;
-    align-items: center;
-    /*&::after{
-                  content: '';
-                  display: block;
-                  width: 100%;
-                  height: 1px;
-                  margin-left: 1rem;
-                  background-color: darken($color-grey-bg, 10%);
-            }*/ }
+    align-items: center; }
     .appart_form .group_label + * {
       grid-column: 1 / 2; }
   .appart_form .owner {
