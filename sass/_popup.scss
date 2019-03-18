@@ -27,9 +27,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60%;
+    max-width: 80%;
     transform: translate(-50%, -50%);
-    background-color: $color-blue-shine;
+    //background-color: $color-blue-shine;
     border-radius: 5px;
     padding: 2rem 0;
     color: white;

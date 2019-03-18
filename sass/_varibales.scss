@@ -1,7 +1,14 @@
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::
 //FONT IMPORT
-@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700');
+//@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700');
+
+@font-face {
+    font-family: 'Cuprum';
+    src: url('../../fonts/Cuprum-Regular.woff') format('woff');
+}
+
+
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::
 //FONT VARIABLES
@@ -25,13 +32,3 @@ $color-green: #8CC63F;
 $bp-large : 38em; //610px
 $bp-medium : 29em; //470px
 $bp-small : 24em; //386px
-
-
-
-
-
-
-
-
-
-

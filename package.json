@@ -5,7 +5,7 @@
   "main": "views/appartment/index.php",
   "scripts": {
     "compile": "node-sass sass/main.scss public/css/style.css -w",
-    "live": "live-server --browser=chrome"
+    "live": "live-server --browser=firefox"
   },
   "author": "Webbog",
   "license": "ISC",

@@ -1,10 +1,11 @@
 .appart_form{
       display: grid;
       grid-gap: 2rem;
-      padding: 2rem 5rem;
+      //padding: 2rem 5rem;
+      grid-auto-flow: column;
       justify-content: center;
       select, input, textarea{
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             //border-radius: 3px;
             //border: 1px solid darken(#EEEEEE, 5%);
             border: none;
@@ -17,19 +18,29 @@
             }
       }
       textarea{
-            width: 30rem;
+            //width: 30rem;
       }
       form{
             grid-column: 1 / 2;
             grid-row: 2 / 3;
             display: grid;
-            grid-row-gap: 1.5rem;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 3rem;
             background-color: white;
             border-radius: 3px;
             padding: 3rem;
             box-shadow: 0 5px 5px rgba($color-black, 0.2);
             & > div{
-                  grid-gap: 1.5rem;
+              display: grid;
+              grid-row-gap: 2rem;
+            }
+            & > div > div{
+                  align-items: center;
+                  grid-gap: 2rem;
+            }
+            .two{
+              display: grid;
+              grid-template-columns: repeat(2, 20rem);
             }
       }
       .guide{
@@ -111,10 +122,11 @@
                   align-items: center;
                   justify-content: center;
                   font-size: 1.5rem;
+                  border: 1px solid $color-blue-shine;
                   border-radius: 3px;
                   padding: .5rem 2rem;
-                  background-color: $color-blue-shine;
-                  color: white;
+                  //background-color: $color-blue-shine;
+                  color: darken(#EEEEEE, 30%);
                   cursor: pointer;
             }
             .sample_images{
