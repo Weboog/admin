@@ -9,5 +9,8 @@
   },
   "author": "Webbog",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
 }
