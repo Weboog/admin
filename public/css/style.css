@@ -676,7 +676,7 @@ header {
   .appart_form textarea {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 1.2rem; }
+    font-size: 1rem; }
   .appart_form form {
     grid-column: 1 / 2;
     grid-row: 2 / 3;

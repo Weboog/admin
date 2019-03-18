@@ -98,7 +98,6 @@ window.addEventListener('load', function () {
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::://
     //ADD APARTMENT
-
     //Send form with ajax
     let form = document.forms.namedItem('new_appart');
     //form.addEventListener('submit', addApart);
