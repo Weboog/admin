@@ -13,21 +13,35 @@
                   border-bottom-color: $color-blue;
             }
       }
-      input[type='submit']{
-        background-color: $color-blue-shine;
-        color: #FFF;
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
-        align-self: end;
-        justify-self: right;
-        border-radius: 3px;
-        border-bottom: none;
-        cursor: pointer;
+      .buttons{
+        display: grid;
+        align-items: end;
+        justify-items: end;
+        div{
+          display: grid;
+          align-items: center;
+          grid-template-columns: repeat(2, auto);
+          grid-column-gap: 1.5rem;
+        }
+        .reset{
+          font-size: 1.5rem;
+          color: $color-black;
+        }
+        .submit{
+          font-family: $font-cuprum;
+          font-size: 1.5rem;
+          background-color: $color-blue;
+          border: none;
+          color: #FFF;
+          padding: .7rem 3rem;
+          border-radius: 3px;
+          cursor: pointer;
+        }
       }
       textarea{
             font-family: $font-opensans;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.2rem;
       }
       form{
             grid-column: 1 / 2;
@@ -44,8 +58,11 @@
               grid-row-gap: 2rem;
             }
             & > div > div{
-                  align-items: center;
-                  grid-gap: 2rem;
+              align-items: center;
+              grid-gap: 2rem;
+            }
+            .sub{
+              display: grid;
             }
             .two{
               display: grid;

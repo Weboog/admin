@@ -302,9 +302,6 @@
 </div>
 
 <div id="add" class="popup">
-<div class="popup__closer">
-    <a href="">&times;</a>
-</div>
 <div class="popup__content">
   <?php
   if (isset($data)) {
@@ -337,7 +334,7 @@
           </div>
           <div class="address">
               <h3 class="group_label">Adresse</h3>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('type', $data['fail'])) {
                     echo '<p class="fail">Choisissez le type</p>';
@@ -349,7 +346,7 @@
                     <option value="2">Maison</option>
                 </select>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('city', $data['fail'])) {
                     echo '<p class="fail">Choisissez une ville</p>';
@@ -362,7 +359,7 @@
                     <option value="3">Témara</option>
                 </select>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('zone', $data['fail'])) {
                     echo '<p class="fail">Choisissez une zone</p>';
@@ -370,14 +367,9 @@
                 ?>
                 <select name="zone" id="district">
                     <option value="0">Zone</option>
-                    <option value="1">Zone 1</option>
-                    <option value="2">Zone 2</option>
-                    <option value="3">Zone 3</option>
-                    <option value="4">Zone 4</option>
-                    <option value="5">Zone 5</option>
                 </select>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('borough', $data['fail'])) {
                     echo '<p class="fail">Choisissez un quartier</p>';
@@ -385,14 +377,9 @@
                 ?>
                 <select name="borough" id="borough">
                     <option value="0">Quartier</option>
-                    <option value="1">Quartier 1</option>
-                    <option value="2">Quartier 2</option>
-                    <option value="3">Quartier 3</option>
-                    <option value="4">Quartier 4</option>
-                    <option value="5">Quartier 5</option>
                 </select>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('address', $data['fail'])) {
                     echo '<p class="fail">Saisissez une adresse</p>';
@@ -404,7 +391,7 @@
           <!-- Start second wrapper -->
           <div class="infos">
               <h3 class="group_label">Informations</h3>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('pieces', $data['fail'])) {
                     echo '<p class="fail">Choisir nombre de pièces</p>';
@@ -424,7 +411,7 @@
                     <option value="10">10</option>
                 </select>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('rooms', $data['fail'])) {
                     echo '<p class="fail">Choisir nombre de chambres</p>';
@@ -444,7 +431,7 @@
                     <option value="10">10</option>
                 </select>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('surface', $data['fail'])) {
                     echo '<p class="fail">Spécifiez la surface</p>';
@@ -452,7 +439,7 @@
                 ?>
                 <input type="text" name="surface" placeholder="Surface">
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('price', $data['fail'])) {
                     echo '<p class="fail">Spécifiez le prix</p>';
@@ -466,7 +453,7 @@
         <div>
           <div class="details">
               <h3 class="group_label">Détails</h3>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('description', $data['fail'])) {
                     echo '<p class="fail">Faite une description</p>';
@@ -474,7 +461,7 @@
                 ?>
                 <textarea name="description" id="description" placeholder="Decription"></textarea>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('external', $data['fail'])) {
                     echo '<p class="fail">Décrire l\'extérieur</p>';
@@ -482,7 +469,7 @@
                 ?>
                 <textarea name="external" id="external" placeholder="à l'éxtérieur"></textarea>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('internal', $data['fail'])) {
                     echo '<p class="fail">Décrire l\'intérieur</p>';
@@ -490,7 +477,7 @@
                 ?>
                 <textarea name="internal" id="internal" placeholder="à l'intérieur"></textarea>
               </div>
-              <div>
+              <div class="sub">
                 <?php
                   if (array_key_exists('conditions', $data['fail'])) {
                     echo '<p class="fail">Listez des conditions</p>';
@@ -524,7 +511,12 @@
                 <div class="sample_images"></div>
             </div>
           </div>
-          <input type="submit" name="submit" value="Enregistrer">
+          <div class="buttons">
+            <div>
+              <a href="#" class="reset">Annuler</a>
+              <input type="submit" class="submit" name="submit" value="Enregistrer">
+            </div>
+          </div>
         </div>
 
       </form>

@@ -98,52 +98,82 @@ window.addEventListener('load', function () {
 
     //:::::::::::::::::::::::::::::::::::::::::::::::::://
     //ADD APARTMENT
-    //Send form with ajax
-    let form = document.forms.namedItem('new_appart');
-    //form.addEventListener('submit', addApart);
-    function addApart (e) {
-        let fd = new FormData(form);
-        //fd.delete('gallery[]');
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', '/admin_panel/appartment/save', true);
-        xhr.addEventListener('load', function (e) {
-            console.log(this.responseText);
-        });
-        xhr.send(fd);
-        e.preventDefault();
+
+    //Loding data specified by SELECT
+    let city = document.querySelector('#city');
+    let zone = document.querySelector('#district');
+    let borough = document.querySelector('#borough');
+
+    //Loding Zones
+    function loadZones(){
+      zone.innerHTML = '';
+      borough.innerHTML = `<option value="0">Quartier</option>`;
+      let index = this.selectedIndex;
+      let city = this.children.item(index).value;
+      AJAX.get(
+        '/admin/district/city/'+city,
+        function (data) {
+          zone.innerHTML = `<option value="0">Zone</option>`;
+          let zones = JSON.parse(data).zones;
+          zones.forEach(function(z){
+            let option = `<option value="${z.id}">${z.district}</option>`;
+            zone.innerHTML += option;
+          })
+        }
+      )
     }
+
+    city.addEventListener('change', loadZones);
+
+    //Loading Borough
+    function loadBoroughs(){
+      borough.innerHTML = '';
+      let index = this.selectedIndex;
+      let id = this.children.item(index).value;
+      AJAX.get(
+        '/admin/district/zone/'+id,
+        function (data) {
+          borough.innerHTML = `<option value="0">Quartier</option>`;
+          let boroughs = JSON.parse(data).borough;
+          let str = boroughs[0].borough
+          let arr = str.split(',');
+          arr.forEach(function(s, i){
+            let option = `<option value="${i}">${s}</option>`;
+            borough.innerHTML += option;
+          })
+        }
+      )
+    }
+
+    zone.addEventListener('change', loadBoroughs);
+    /////////////////////////////////////////////////////////////////////
+    let form = document.forms.namedItem('new_appart');
+    let cancel = document.querySelector('.reset');
+    function resetForm(){
+      let messages = document.querySelectorAll('p.fail');
+      let labels = document.querySelectorAll('label');
+      messages.forEach(function(message) {
+        message.remove();
+      })
+      labels.forEach(function(label) {
+        label.textContent = 'Parcourir';
+      })
+      form.reset();
+    }
+    cancel.addEventListener('click', resetForm)
 
     //Preview Images to be uploaded
     let browsers = document.querySelectorAll(".browse");
-    let added = [];
-
     browsers.forEach(function (browse) {
-        browse.addEventListener('click', function () {
-            this.nextElementSibling.innerHTML = '';
-            this.value = '';
-        });
         browse.addEventListener('change', function (e) {
-
             let next = this.nextElementSibling;
-            function readImage(file){
-                let fr = new FileReader();
-                if (/\.(jpe?g)$/i.test(file.name)) {
-                    if (!added.includes(file.name)) {
-                        fr.addEventListener('load', function () {
-                            let img = new Image();
-                            img.alt = file.name;
-                            img.title = file.name;
-                            img.src = this.result;
-                            next.appendChild(img);
-                            added.push(file.name);
-                        });
-                        fr.readAsDataURL(file);
-                    }
-                }
+            let label = this.previousElementSibling;
+            let length = this.files.length;
+            let unit = 'images';
+            if (length <= 1) {
+              unit = 'image'
             }
-            if (this.files){
-                [].forEach.call(this.files, readImage);
-            }
+            label.textContent = `${length} ${unit} `;
         });
     })
 

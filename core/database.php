@@ -101,8 +101,12 @@ abstract class Database {
     }
 
 
-    protected function where(array $params){
-        $wheres = 'select * from %s where';
+    protected function where(array $columns, array $params){
+        $wheres = 'select %s from %s where';
+        $cols = '';
+        foreach ($columns as $value) {
+          $cols .= $value.',';
+        }
         foreach ($params as $key => $value){
             $wheres .= ' '.$key;
             if (is_numeric($value)){
@@ -112,12 +116,14 @@ abstract class Database {
             }
             $wheres .= ' and';
         }
+        $cols = preg_replace('/(,)*$/', '', $cols);
         $wheres = preg_replace('/( and)*$/', '', $wheres);
         $pdo = $this->getInstance();
-        $req = sprintf($wheres, $this->_table);
+        $req = sprintf($wheres, $cols, $this->_table);
         $stm = $pdo->query($req);
-        $result = $stm->fetch(PDO::FETCH_ASSOC);
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+        //echo $req;
     }
 
     public function insert(array $columns, array $values){

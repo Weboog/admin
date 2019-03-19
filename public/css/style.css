@@ -663,20 +663,31 @@ header {
     color: #3c3c3c; }
     .appart_form select:focus, .appart_form input:focus, .appart_form textarea:focus {
       border-bottom-color: #4169E1; }
-  .appart_form input[type='submit'] {
-    background-color: #00B6FF;
-    color: #FFF;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    align-self: end;
-    justify-self: right;
-    border-radius: 3px;
-    border-bottom: none;
-    cursor: pointer; }
+  .appart_form .buttons {
+    display: grid;
+    align-items: end;
+    justify-items: end; }
+    .appart_form .buttons div {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(2, auto);
+      grid-column-gap: 1.5rem; }
+    .appart_form .buttons .reset {
+      font-size: 1.5rem;
+      color: #363636; }
+    .appart_form .buttons .submit {
+      font-family: "Cuprum", sans-serif;
+      font-size: 1.5rem;
+      background-color: #4169E1;
+      border: none;
+      color: #FFF;
+      padding: .7rem 3rem;
+      border-radius: 3px;
+      cursor: pointer; }
   .appart_form textarea {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 1rem; }
+    font-size: 1.2rem; }
   .appart_form form {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
@@ -693,6 +704,8 @@ header {
     .appart_form form > div > div {
       align-items: center;
       grid-gap: 2rem; }
+    .appart_form form .sub {
+      display: grid; }
     .appart_form form .two {
       display: grid;
       grid-template-columns: repeat(2, 20rem); }
