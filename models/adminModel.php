@@ -20,9 +20,9 @@ class adminModel extends Database
         }
     }
 
-    public function login($pass){
-        $params = array('email' => $_SESSION['email'], 'password' => $pass);
-        return $this->where($params);
+    public function login($email, $pass){
+        $params = array('email' => $email, 'password' => $pass);
+        return $this->where(array('*'), $params);
     }
 
 }

@@ -11,6 +11,7 @@ define('VIEWS', ROOT.DS.'views');
 require_once CORE . DS . 'controller.php';
 require_once CORE . DS . 'database.php';
 require_once CORE . DS . 'session.php';
+require_once CORE . DS . 'message.php';
 include_once CORE . DS . 'cookie.php';
 include_once CORE . DS . 'widget.php';
 

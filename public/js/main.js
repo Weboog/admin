@@ -138,7 +138,7 @@ window.addEventListener('load', function () {
           let str = boroughs[0].borough
           let arr = str.split(',');
           arr.forEach(function(s, i){
-            let option = `<option value="${i}">${s}</option>`;
+            let option = `<option value="${i+1}">${s}</option>`;
             borough.innerHTML += option;
           })
         }

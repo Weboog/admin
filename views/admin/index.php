@@ -8,19 +8,22 @@
     <title>PANNEAU D'ADMINISTRATION</title>
 </head>
 <body>
-    <h1 style="color: tomato">Zone d'accès restreinte</h1>
-    <form action="" method="post">
-        <input type="email" name="email" placeholder="Adresse E-mail">
-        <?php
-            if (isset($data['status'])){
-                echo $data['message'];
-            }elseif (isset($data['input'])){
-                foreach ($data as $key => $value){
-                    echo sprintf('<input type="%s" name="%s" placeholder="%s">', $value, $value, $value);
-                }
+<section class="login">
+    <header>
+        <h1>Zone d'accès restreinte</h1>
+    </header>
+    <?php
+        if (count($errors = message::getErrors()) > 0){
+            foreach ($errors as $error){
+                echo $error.'<br>';
             }
-        ?>
+        }
+    ?>
+    <form action="" method="post">
+        <input type="email" name="email" placeholder="E-mail">
+        <input type="password" name="password" placeholder="password">
         <button>Connexion</button>
     </form>
+</section>
 </body>
 </html>
