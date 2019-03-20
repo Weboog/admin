@@ -144,7 +144,8 @@ abstract class Database {
         $base_sql = 'SELECT a.id, a.serial, p.type, a.pieces, a.rooms, a.surface, a.price, c.city, o.name FROM appartments as a 
                       LEFT JOIN products p ON a.type = p.id
                       LEFT JOIN cities c ON a.city = c.id
-                      LEFT JOIN owners o ON a.owner = o.id';
+                      LEFT JOIN owners o ON a.owner = o.id
+                      ORDER BY a.id DESC';
         //$num = 1;
         //$sql = $base_sql . ' LIMIT :s,:c';
         $stm = $pdo->prepare($base_sql/*$sql*/);
