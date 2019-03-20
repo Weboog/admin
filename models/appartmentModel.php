@@ -8,13 +8,16 @@
 
 class appartmentModel extends Database
 {
+
     public function __construct()
     {
         parent::__construct();
     }
 
+
     public function getAll(array $options){
-        return $this->all($options);
+        //return $this->all($options);
+        return $this->ext();
     }
 
     public function getBy(array $options){

@@ -72,13 +72,17 @@ if (Session::get('email') === null) {
                 <!--/////////////////////////////////////////////  -->
 
                 <?php
+                $types = array(
+                        'appartement' => 'Apt',
+                        'maison' => 'Mas'
+                );
                 $row = '
-                <div class="trow trow__id">#%d</div>
+                <div class="trow trow__id"><a href="http://locatia.web/appartments/details/%d%d" target="_blank">#%d%d</a></div>
                 <div class="trow">%s</div>
                 <div class="trow">%s</div>
                 <div class="trow">%s</div>
-                <div class="trow">%dm<sup>2</sup></div>
-                <div class="trow">%ddh</div>
+                <div class="trow">%d m<sup>2</sup></div>
+                <div class="trow">%d dh</div>
                 <div class="trow">%s</div>
                 <div class="trow">%s</div>
                 <div class="trow">
@@ -103,14 +107,17 @@ if (Session::get('email') === null) {
                   foreach ($data[1] as $arr) {
                     echo sprintf(
                       $row,
+                      $arr['serial'],
                       $arr['id'],
-                      $arr['type'],
+                      $arr['serial'],
+                      $arr['id'],
+                      $types[$arr['type']],
                       str_pad($arr['pieces'], 2, '0', STR_PAD_LEFT),
                       str_pad($arr['rooms'], 2, '0', STR_PAD_LEFT),
                       $arr['surface'],
                       $arr['price'],
-                      $arr['city'],
-                      $arr['owner'],
+                      utf8_encode($arr['city']),
+                      utf8_encode($arr['name']),
                       $arr['id'],
                       $arr['id'],
                       $arr['id']

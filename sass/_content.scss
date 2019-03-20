@@ -181,20 +181,35 @@
     .thead{
       text-transform: uppercase;
       font-size: 1.4rem;
-      font-weight: 100;
+      font-weight: 600;
       color: #666;
       border-bottom: 1px dashed #DDD;
       padding: 0 0 0.5rem;
     }
     .trow{
-      font-family: $font-cuprum;
+      font-family: $font-opensans;
       align-self: center;
       font-size: 1.3rem;
       color: #555;
-      //font-weight: 600;
+      font-weight: 600;
       cursor: default;
+
       &__id{
-        color: $color-blue;
+        a{
+          justify-self: start;
+          color: white;
+          //display: block;
+          background-color: $color-blue;
+          padding: .2rem 1rem;
+          border: 1px solid transparent;
+          border-radius: 3px;
+          transition: all .2s ease-out;
+          &:hover{
+            color: $color-blue;
+            background-color: white;
+            border-color: $color-blue;
+          }
+        }
       }
     }
     .actions_menu{

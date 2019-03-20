@@ -4,6 +4,7 @@ require_once 'config.php';
 
 abstract class Database {
 
+    private static $LIMIT = 30;
     private static $dpo = null;
     private $_table;
 
@@ -133,6 +134,29 @@ abstract class Database {
         $stm->execute();
         return $pdo->lastInsertId();
     }
+
+    ////////////////////////////////////////////////////
+    ///Function out of architecture. to be revised
+
+    public function ext(){
+
+        $pdo = $this->getInstance();
+        $base_sql = 'SELECT a.id, a.serial, p.type, a.pieces, a.rooms, a.surface, a.price, c.city, o.name FROM appartments as a 
+                      LEFT JOIN products p ON a.type = p.id
+                      LEFT JOIN cities c ON a.city = c.id
+                      LEFT JOIN owners o ON a.owner = o.id';
+        //$num = 1;
+        //$sql = $base_sql . ' LIMIT :s,:c';
+        $stm = $pdo->prepare($base_sql/*$sql*/);
+        //$offset = self::$LIMIT * ($num-1);
+        //$stm->bindParam(':s', $offset, PDO::PARAM_INT);
+        //$stm->bindParam(':c', self::$LIMIT, PDO::PARAM_INT);
+        $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
+    /////////////////////////////////////////////////////
 
     public static function pre(array $array){
         echo '<pre>';
