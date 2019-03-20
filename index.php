@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL & ~E_NOTICE);
 //Defining constants------------------------------------------------------
 define('ROOT', __DIR__);
 define('DS', DIRECTORY_SEPARATOR);

@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700|Open+Sans:400,600");
+@font-face {
+  font-family: "Cuprum";
+  src: url("/fonts/Cuprum-Regular.woff");
+  font-weight: normal;
+  font-style: normal; }
+
 .aside {
   position: fixed;
   top: 0;
@@ -51,6 +56,78 @@ html {
 
 body {
   background-color: #EEEEEE; }
+
+#login {
+  background-color: #EEEEEE;
+  display: grid;
+  height: 100vh;
+  justify-items: center; }
+  #login header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2rem;
+    background-color: transparent;
+    justify-items: center;
+    color: dimgray;
+    border-bottom: none;
+    margin-bottom: 2rem; }
+    #login header h2 {
+      font-weight: 100;
+      font-size: 2rem;
+      text-transform: uppercase; }
+  #login p.message {
+    padding: .5rem 1rem;
+    background-color: #ffcccc;
+    color: #cc0000;
+    font-size: 1.3rem;
+    border: 1px solid #ffb3b3;
+    border-radius: 3px;
+    margin-bottom: 2rem; }
+  #login form {
+    border: 1px solid #d5d5d5;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    display: grid;
+    grid-row-gap: 2rem;
+    width: 30rem; }
+    #login form .widget {
+      display: grid;
+      grid-row-gap: .5rem; }
+      #login form .widget label {
+        font-size: 1.4rem;
+        color: #505050; }
+      #login form .widget input {
+        padding: .8rem;
+        border-radius: 3px;
+        border: 1px solid #d5d5d5;
+        transition: all .2s ease-out; }
+        #login form .widget input:focus {
+          border: 1px solid #4169E1; }
+    #login form button {
+      padding: .8rem;
+      background-image: linear-gradient(to bottom, #6d8ce8, #4169E1);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-size: 1.5rem;
+      font-family: "Cuprum", sans-serif;
+      cursor: pointer; }
+      #login form button:hover {
+        background-image: linear-gradient(to bottom, #4169E1, #214cce); }
+
+.login {
+  margin-top: 5rem; }
+
+.login_logo {
+  background-color: #363636;
+  background-image: url(../img/locatia-monochrome.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 5px;
+  width: 9rem;
+  height: 13rem; }
 
 header {
   background-color: royalblue;

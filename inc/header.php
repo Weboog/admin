@@ -14,8 +14,8 @@
         </p>
         <div class="user__options">
             <ul class="user__menu">
-                <li><a href="#">Profil</a></li>
-                <li><a href="#">Messages<span class="count">21</span></a></li>
+                <!-- <li><a href="#">Profil</a></li>
+                <li><a href="#">Messages<span class="count">21</span></a></li> -->
                 <li><a href="admin/logout">Déconnexion</a></li>
             </ul>
         </div>

@@ -1,7 +1,13 @@
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::
 //FONT IMPORT
-@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700|Open+Sans:400,600');
+//@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700|Open+Sans:400,600');
+@font-face {
+  font-family: "Cuprum";
+  src:url("/fonts/Cuprum-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+};
 
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::

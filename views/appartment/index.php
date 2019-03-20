@@ -1,4 +1,9 @@
-<?php Session::init(); ?>
+<?php
+Session::init();
+if (Session::get('email') === null) {
+  header('Location: /');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

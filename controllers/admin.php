@@ -23,7 +23,7 @@ class Admin extends Controller {
                   Session::set('names', $res[0]['names']);
                   Session::set('level', $res[0]['level']);
                   Session::set('email', $res[0]['email']);
-                  header('Location: appartment');
+                  header('Location: /appartment');
 
               }else{
 
@@ -40,7 +40,7 @@ class Admin extends Controller {
     public function logout(){
       Session::init();
       if(Session::destroy()){
-        header('Location: /admin');
+        header('Location: /');
       }
     }
 }
