@@ -4,6 +4,24 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'open_light';
+  src: url("/fonts/OpenSans-Light-webfont.woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_regular';
+  src: url("/fonts/OpenSans-Regular-webfont.woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_semibold';
+  src: url("/fonts/OpenSans-Semibold-webfont.woff");
+  font-weight: normal;
+  font-style: normal; }
+
 .aside {
   position: fixed;
   top: 0;
@@ -468,7 +486,7 @@ header {
       grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr)); } }
   .data .table {
     display: grid;
-    grid-template-columns: [table-start] auto [id-end price-start] auto [price-end view start] auto [view-end action-start] auto [table-end];
+    grid-template-columns: repeat(9, auto);
     grid-row-gap: 1.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     background-color: #FFF;
@@ -483,21 +501,19 @@ header {
         grid-template-columns: repeat(3, auto); } }
     .data .table .thead {
       text-transform: uppercase;
+      font-size: 1.4rem;
+      font-weight: 100;
       color: #666;
       border-bottom: 1px dashed #DDD;
       padding: 0 0 0.5rem; }
-      @media only screen and (max-width: 24em) {
-        .data .table .thead__views {
-          display: none; } }
     .data .table .trow {
+      font-family: "Cuprum", sans-serif;
       align-self: center;
+      font-size: 1.3rem;
       color: #555;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
       cursor: default; }
-      @media only screen and (max-width: 24em) {
-        .data .table .trow__views {
-          display: none; } }
+      .data .table .trow__id {
+        color: #4169E1; }
     .data .table .actions_menu {
       display: grid;
       grid-template-columns: repeat(3, auto);
@@ -517,6 +533,7 @@ header {
           background-color: rgba(0, 0, 0, 0.9);
           border-radius: 3px;
           color: white;
+          font-family: "Cuprum", sans-serif;
           font-size: 1.3rem;
           letter-spacing: initial;
           transition: all .1s ease-out; }
@@ -762,7 +779,7 @@ header {
       border-radius: 3px;
       cursor: pointer; }
   .appart_form textarea {
-    font-family: "Open Sans", sans-serif;
+    font-family: "open_regular", sans-serif;
     font-weight: 600;
     font-size: 1.2rem; }
   .appart_form form {

@@ -55,7 +55,7 @@ abstract class Database {
         $pdo = $this->getInstance();
         $req = sprintf('select * from %s order by %s %s limit %d,%d', $this->_table,$order_by, $sense, $limit_start, $limit_count);
         $stm = $pdo->query($req);
-        print_r($stm->fetchAll(PDO::FETCH_ASSOC));
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
     protected function find(array $options){

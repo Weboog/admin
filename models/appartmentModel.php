@@ -14,11 +14,11 @@ class appartmentModel extends Database
     }
 
     public function getAll(array $options){
-        $this->all($options);
+        return $this->all($options);
     }
 
     public function getBy(array $options){
-        $this->find($options);
+        return $this->find($options);
     }
 
     public function create(array $columns, array $params){

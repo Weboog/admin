@@ -11,13 +11,14 @@ class Appartment extends Controller
 
     public function index(){
       $status = $this->add();
-      $this->render('index', $status);
+      $apparts = $this->all();
+      $this->render('index', array($status, $apparts));
     }
 
     public function all(){
         $model = $this->getModel();
         $options = array('order_by' => 'created_at', 'sense' => 'desc');
-        $model->getAll($options);
+        return $model->getAll($options);
     }
 
     public function get($id){

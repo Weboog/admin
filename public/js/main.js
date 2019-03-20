@@ -111,7 +111,7 @@ window.addEventListener('load', function () {
       let index = this.selectedIndex;
       let city = this.children.item(index).value;
       AJAX.get(
-        '/admin/district/city/'+city,
+        '/district/city/'+city,
         function (data) {
           zone.innerHTML = `<option value="0">Zone</option>`;
           let zones = JSON.parse(data).zones;
@@ -131,7 +131,7 @@ window.addEventListener('load', function () {
       let index = this.selectedIndex;
       let id = this.children.item(index).value;
       AJAX.get(
-        '/admin/district/zone/'+id,
+        '/district/zone/'+id,
         function (data) {
           borough.innerHTML = `<option value="0">Quartier</option>`;
           let boroughs = JSON.parse(data).borough;

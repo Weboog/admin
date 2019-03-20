@@ -59,229 +59,64 @@ if (Session::get('email') === null) {
         <h2 class="head-2">Affichage de 30 / 125 appartements</h2>
         <section class="data">
             <div class="table">
+                <!--/////////////////////////////////////////////  -->
                 <h3 class="thead">Id</h3>
+                <h3 class="thead">Type</h3>
+                <h3 class="thead">Pièces</h3>
+                <h3 class="thead">Chambres</h3>
+                <h3 class="thead">Surface</h3>
                 <h3 class="thead">Prix</h3>
-                <h3 class="thead thead__views">Vues</h3>
+                <h3 class="thead">Ville</h3>
+                <h3 class="thead">Propriétaire</h3>
                 <h3 class="thead">Actions</h3>
+                <!--/////////////////////////////////////////////  -->
 
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
+                <?php
+                $row = '
+                <div class="trow trow__id">#%d</div>
+                <div class="trow">%s</div>
+                <div class="trow">%s</div>
+                <div class="trow">%s</div>
+                <div class="trow">%dm<sup>2</sup></div>
+                <div class="trow">%ddh</div>
+                <div class="trow">%s</div>
+                <div class="trow">%s</div>
+                <div class="trow">
                     <ul class="actions_menu">
-                    <li><a href="#view_appart">
+                    <li><a href="#view_appart" data-id="%d">
                         <svg class="actions_icon">
                             <use href="public/img/sprite.svg#details"></use>
                         </svg>
                         <span class="actions_label">Détails</span></a></li>
-                    <li><a href="#edit_appart">
+                    <li><a href="#edit_appart" data-id="%d">
                         <svg class="actions_icon">
                             <use href="public/img/sprite.svg#edit"></use>
                         </svg>
                         <span class="actions_label">éditer</span></a></li>
-                    <li><a href="#delete_appart">
+                    <li><a href="#delete_appart" data-id="%d">
                         <svg class="actions_icon">
                             <use href="public/img/sprite.svg#trash"></use>
                         </svg>
                         <span class="actions_label">Supprimer</span></a></li>
                 </ul>
-                </div>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="table">
-                <h3 class="thead">Id</h3>
-                <h3 class="thead">Prix</h3>
-                <h3 class="thead thead__views">Vues</h3>
-                <h3 class="thead">Actions</h3>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="table">
-                <h3 class="thead">Id</h3>
-                <h3 class="thead">Prix</h3>
-                <h3 class="thead thead__views">Vues</h3>
-                <h3 class="thead">Actions</h3>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="trow trow__id">#ADC257410</div>
-                <div class="trow trow__price">350DH</div>
-                <div class="trow trow__views">230</div>
-                <div class="trow trow__actions">
-                    <ul class="actions_menu">
-                        <li><a href="#view_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#details"></use>
-                            </svg>
-                            <span class="actions_label">Détails</span></a></li>
-                        <li><a href="#edit_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#edit"></use>
-                            </svg>
-                            <span class="actions_label">éditer</span></a></li>
-                        <li><a href="#delete_appart">
-                            <svg class="actions_icon">
-                                <use href="public/img/sprite.svg#trash"></use>
-                            </svg>
-                            <span class="actions_label">Supprimer</span></a></li>
-                    </ul>
-                </div>
+                </div>';
+                  foreach ($data[1] as $arr) {
+                    echo sprintf(
+                      $row,
+                      $arr['id'],
+                      $arr['type'],
+                      str_pad($arr['pieces'], 2, '0', STR_PAD_LEFT),
+                      str_pad($arr['rooms'], 2, '0', STR_PAD_LEFT),
+                      $arr['surface'],
+                      $arr['price'],
+                      $arr['city'],
+                      $arr['owner'],
+                      $arr['id'],
+                      $arr['id'],
+                      $arr['id']
+                    );
+                  }
+                 ?>
             </div>
         </section>
         <!--<section class="test">
@@ -310,12 +145,12 @@ if (Session::get('email') === null) {
 <div class="popup__content">
   <?php
   if (isset($data)) {
-    if (count($data['fail']) > 0) {
+    if (count($data[0]['fail']) > 0) {
         $status = 'fail';
     }
-    if (count($data['success']) > 0) {
+    if (count($data[0]['success']) > 0) {
         $status = 'success';
-        echo sprintf('<p class="message %s">%s</p>', $status, $data['success'][0]);
+        echo sprintf('<p class="message %s">%s</p>', $status, $data[0]['success'][0]);
     }
   }
   ?>
@@ -326,7 +161,7 @@ if (Session::get('email') === null) {
           <div class="owner">
               <h3 class="group_label">Propriétaire</h3>
               <?php
-                if (array_key_exists('owner', $data['fail'])) {
+                if (array_key_exists('owner', $data[0]['fail'])) {
                   echo '<p class="fail">Choisissez un propriétaire</p>';
                 }
               ?>
@@ -341,7 +176,7 @@ if (Session::get('email') === null) {
               <h3 class="group_label">Adresse</h3>
               <div class="sub">
                 <?php
-                  if (array_key_exists('type', $data['fail'])) {
+                  if (array_key_exists('type', $data[0]['fail'])) {
                     echo '<p class="fail">Choisissez le type</p>';
                   }
                 ?>
@@ -353,7 +188,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('city', $data['fail'])) {
+                  if (array_key_exists('city', $data[0]['fail'])) {
                     echo '<p class="fail">Choisissez une ville</p>';
                   }
                 ?>
@@ -366,7 +201,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('zone', $data['fail'])) {
+                  if (array_key_exists('zone', $data[0]['fail'])) {
                     echo '<p class="fail">Choisissez une zone</p>';
                   }
                 ?>
@@ -376,7 +211,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('borough', $data['fail'])) {
+                  if (array_key_exists('borough', $data[0]['fail'])) {
                     echo '<p class="fail">Choisissez un quartier</p>';
                   }
                 ?>
@@ -386,7 +221,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('address', $data['fail'])) {
+                  if (array_key_exists('address', $data[0]['fail'])) {
                     echo '<p class="fail">Saisissez une adresse</p>';
                   }
                 ?>
@@ -398,7 +233,7 @@ if (Session::get('email') === null) {
               <h3 class="group_label">Informations</h3>
               <div class="sub">
                 <?php
-                  if (array_key_exists('pieces', $data['fail'])) {
+                  if (array_key_exists('pieces', $data[0]['fail'])) {
                     echo '<p class="fail">Choisir nombre de pièces</p>';
                   }
                 ?>
@@ -418,7 +253,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('rooms', $data['fail'])) {
+                  if (array_key_exists('rooms', $data[0]['fail'])) {
                     echo '<p class="fail">Choisir nombre de chambres</p>';
                   }
                 ?>
@@ -438,7 +273,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('surface', $data['fail'])) {
+                  if (array_key_exists('surface', $data[0]['fail'])) {
                     echo '<p class="fail">Spécifiez la surface</p>';
                   }
                 ?>
@@ -446,7 +281,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('price', $data['fail'])) {
+                  if (array_key_exists('price', $data[0]['fail'])) {
                     echo '<p class="fail">Spécifiez le prix</p>';
                   }
                 ?>
@@ -460,7 +295,7 @@ if (Session::get('email') === null) {
               <h3 class="group_label">Détails</h3>
               <div class="sub">
                 <?php
-                  if (array_key_exists('description', $data['fail'])) {
+                  if (array_key_exists('description', $data[0]['fail'])) {
                     echo '<p class="fail">Faite une description</p>';
                   }
                 ?>
@@ -468,7 +303,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('external', $data['fail'])) {
+                  if (array_key_exists('external', $data[0]['fail'])) {
                     echo '<p class="fail">Décrire l\'extérieur</p>';
                   }
                 ?>
@@ -476,7 +311,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('internal', $data['fail'])) {
+                  if (array_key_exists('internal', $data[0]['fail'])) {
                     echo '<p class="fail">Décrire l\'intérieur</p>';
                   }
                 ?>
@@ -484,7 +319,7 @@ if (Session::get('email') === null) {
               </div>
               <div class="sub">
                 <?php
-                  if (array_key_exists('conditions', $data['fail'])) {
+                  if (array_key_exists('conditions', $data[0]['fail'])) {
                     echo '<p class="fail">Listez des conditions</p>';
                   }
                 ?>
@@ -496,7 +331,7 @@ if (Session::get('email') === null) {
             <div class="gallery">
                 <h3 class="group_label">Miniatures</h3>
                 <?php
-                  if (array_key_exists('thumbs', $data['fail'])) {
+                  if (array_key_exists('thumbs', $data[0]['fail'])) {
                     echo '<p class="fail">Aucune image</p>';
                   }
                 ?>
@@ -507,7 +342,7 @@ if (Session::get('email') === null) {
             <div class="gallery">
                 <h3 class="group_label">Gallerie</h3>
                 <?php
-                  if (array_key_exists('gallery', $data['fail'])) {
+                  if (array_key_exists('gallery', $data[0]['fail'])) {
                     echo '<p class="fail">Aucune image</p>';
                   }
                 ?>
@@ -530,7 +365,7 @@ if (Session::get('email') === null) {
 </div>
 
     <!--///////////////////////////////////////////-->
-    <div class="element" id="delete_appart">
+    <!-- <div class="element" id="delete_appart">
         <div class="markup">
             <h2 class="head-1">Supprimer l'appartement #CDA456389</h2>
             <div class="controls">
@@ -550,6 +385,6 @@ if (Session::get('email') === null) {
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>

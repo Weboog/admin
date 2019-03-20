@@ -170,36 +170,31 @@
       grid-template-columns: repeat(3, auto);
     }
     display: grid;
-    grid-template-columns: [table-start] auto [id-end price-start] auto [price-end view start] auto [view-end action-start] auto [table-end];
+    grid-template-columns: repeat(9, auto);
     grid-row-gap: 1.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.1);
     background-color: #FFF;
     border-radius: 3px;
     padding: 2rem;
     font-size: 1.3rem;
+
     .thead{
       text-transform: uppercase;
-      //font-size: 1.3rem;
+      font-size: 1.4rem;
+      font-weight: 100;
       color: #666;
       border-bottom: 1px dashed #DDD;
       padding: 0 0 0.5rem;
-      &__views{
-        @media only screen and(max-width: $bp-small) {
-          display: none;
-        }
-      }
     }
     .trow{
+      font-family: $font-cuprum;
       align-self: center;
-      //font-size: 1.3rem;
+      font-size: 1.3rem;
       color: #555;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
+      //font-weight: 600;
       cursor: default;
-      &__views{
-        @media only screen and(max-width: $bp-small) {
-          display: none;
-        }
+      &__id{
+        color: $color-blue;
       }
     }
     .actions_menu{
@@ -222,6 +217,7 @@
             background-color: rgba(0,0,0, 0.9);
             border-radius: 3px;
             color: white;
+            font-family: $font-cuprum;
             font-size: 1.3rem;
             letter-spacing: initial;
             transition: all .1s ease-out;
@@ -265,24 +261,3 @@
     transition: all .1s ease-out;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
