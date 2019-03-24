@@ -88,7 +88,7 @@ abstract class Database {
         $stm = $pdo->prepare($req);
         $stm->bindParam(':val', $column_value, PDO::PARAM_STR);
         $stm->execute();
-        print_r($stm->fetch(PDO::FETCH_ASSOC));
+        return $stm->fetch(PDO::FETCH_ASSOC);
     }
 
     protected function exists($column, $value){
@@ -154,6 +154,25 @@ abstract class Database {
         //$stm->bindParam(':c', self::$LIMIT, PDO::PARAM_INT);
         $stm->execute();
         $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
+
+    public function wholeApart($id){
+
+        $pdo = $this->getInstance();
+        $sql = 'SELECT a.id, a.serial, a.address, a.borough as b_index, a.pieces, a.rooms, a.surface, a.price, a.views, a.description, a.external, a.internal, a.conditions,
+                            o.name, o.phone, p.type, c.city, d.district, d.borough
+                      FROM appartments as a
+                      LEFT JOIN products p ON a.type = p.id
+                      LEFT JOIN cities c ON a.city = c.id
+                      LEFT JOIN owners o ON a.owner = o.id
+                      LEFT JOIN districts d on a.zone = d.id
+                      WHERE a.id = :id';
+        $stm = $pdo->prepare($sql);
+        $stm->bindParam(':id', $id, PDO::PARAM_INT);
+        $stm->execute();
+        $result = $stm->fetch(PDO::FETCH_ASSOC);
         return $result;
 
     }
