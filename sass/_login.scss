@@ -48,6 +48,7 @@
         border-radius: 3px;
         border: 1px solid darken($color-grey-bg, 10%);
         transition: all .2s ease-out;
+        box-shadow: inset 0 0 5px 2px rgba(0,0,0,.1);
         &:focus{
           border: 1px solid $color-blue;
         }

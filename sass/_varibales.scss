@@ -1,7 +1,7 @@
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::
 //FONT IMPORT
-@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700|Open+Sans:400,600');
+//@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700|Open+Sans:400,600');
 @font-face {
   font-family: "Cuprum";
   src:url("/fonts/Cuprum-Regular.woff");
@@ -35,9 +35,9 @@
 //FONT VARIABLES
 $font-cuprum: 'Cuprum', sans-serif;
 $font-roboto: 'Roboto Condensed', sans-serif;
-$font-opensans: 'Open Sans', sans-serif;
-/*$font-open-light: 'open_light', sans-serif;
-$font-open-semibold: 'open_semibold', sans-serif;*/
+$font-opensans: 'open_regular', sans-serif;
+$font-open-light: 'open_light', sans-serif;
+$font-open-semibold: 'open_semibold', sans-serif;
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::
 //COLORS VARIABLES
