@@ -162,7 +162,7 @@ if (Session::get('email') === null) {
     }
   }
   ?>
-  <section class="appart_form">
+  <section class="add_form">
       <h2 class="head_form">Ajouter un nouvel appartement</h2>
       <form action="" method="post" name="new_appart" enctype="multipart/form-data">
         <div>

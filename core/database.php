@@ -11,6 +11,7 @@ abstract class Database {
     private static $DEFAULT_COLUMN = 'id';
     private static $DEFAULT_ORDER_BY = 'id';
     private static $DEFAULT_SENSE = 'ASC';
+    private static $LIMIT = 'limit';
     private static $DEFAULT_LIMIT_START = 0;
     private static $DEFAULT_LIMIT_COUNT = 100;
 
@@ -54,7 +55,7 @@ abstract class Database {
             $limit_count = $options['limit']['count'];
         }
         $pdo = $this->getInstance();
-        $req = sprintf('select * from %s order by %s %s limit %d,%d', $this->_table,$order_by, $sense, $limit_start, $limit_count);
+        $req = sprintf('select * from %s order by %s %s %s %d,%d', $this->_table,$order_by, $sense, $limit_start, $limit_count);
         $stm = $pdo->query($req);
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -82,9 +83,13 @@ abstract class Database {
         if (isset($options['limit'])){
             $limit_start = $options['limit']['start'];
             $limit_count = $options['limit']['count'];
+        }else {
+          $limit = '';
+          $limit_start = '';
+          $limit_count = '';
         }
         $pdo = $this->getInstance();
-        $req = sprintf('select * from %s where %s = :val order by %s %s limit %d,%d', $this->_table, $column, $order_by, $sense, $limit_start, $limit_count);
+        $req = sprintf('select * from %s where %s = :val order by %s %s %s %d,%d', $this->_table, $column, $order_by, $sense, $limit, $limit_start, $limit_count);
         $stm = $pdo->prepare($req);
         $stm->bindParam(':val', $column_value, PDO::PARAM_STR);
         $stm->execute();
@@ -141,7 +146,7 @@ abstract class Database {
     public function ext(){
 
         $pdo = $this->getInstance();
-        $base_sql = 'SELECT a.id, a.serial, p.type, a.pieces, a.rooms, a.surface, a.price, c.city, o.name FROM appartments as a 
+        $base_sql = 'SELECT a.id, a.serial, p.type, a.pieces, a.rooms, a.surface, a.price, c.city, o.name FROM appartments as a
                       LEFT JOIN products p ON a.type = p.id
                       LEFT JOIN cities c ON a.city = c.id
                       LEFT JOIN owners o ON a.owner = o.id

@@ -23,7 +23,7 @@ if (Session::get('email') === null) {
     <nav class="navigation">
         <ul class="navigation__items">
             <li>
-                <a href="#add_newsletter" class="button anchor">
+                <a href="#add" class="button anchor">
                     <svg class="button__icon">
                         <use href="public/img/sprite.svg#add"></use>
                     </svg>
@@ -56,7 +56,106 @@ if (Session::get('email') === null) {
             </form>
         </div>
     </nav>
+    <h2 class="head-2">Liste des proprietaires</h2>
+    <section class="data">
+        <div class="table">
+            <!--/////////////////////////////////////////////  -->
+            <h3 class="thead">Id</h3>
+            <h3 class="thead">Noms</h3>
+            <h3 class="thead">Telephone</h3>
+            <h3 class="thead">Actions</h3>
+            <!--/////////////////////////////////////////////  -->
+
+            <?php
+            $types = array(
+                    'appartement' => 'Apt',
+                    'maison' => 'Mas'
+            );
+            $row = '
+            <div class="trow trow__id"><a href="http://locatia.web/appartments/details/%d%d" target="_blank">#%d%d</a></div>
+            <div class="trow">%s</div>
+            <div class="trow">%s</div>
+            <div class="trow">%s</div>
+            <div class="trow">%d m<sup>2</sup></div>
+            <div class="trow">%d dh</div>
+            <div class="trow">%s</div>
+            <div class="trow">%s</div>
+            <div class="trow">
+                <ul class="actions_menu">
+                <li><a href="#blank" class="actions_menu_button" data-id="%d">
+                    <svg class="actions_icon">
+                        <use href="public/img/sprite.svg#details"></use>
+                    </svg>
+                    <span class="actions_label">Détails</span></a></li>
+                <li><a href="#edit_appart" class="actions_menu_button data-id="%d">
+                    <svg class="actions_icon">
+                        <use href="public/img/sprite.svg#edit"></use>
+                    </svg>
+                    <span class="actions_label">éditer</span></a></li>
+                <li><a href="#delete_appart" class="actions_menu_button data-id="%d">
+                    <svg class="actions_icon">
+                        <use href="public/img/sprite.svg#trash"></use>
+                    </svg>
+                    <span class="actions_label">Supprimer</span></a></li>
+            </ul>
+            </div>';
+              // foreach ($data[1] as $arr) {
+              //   echo sprintf(
+              //     $row,
+              //     $arr['serial'],
+              //     $arr['id'],
+              //     $arr['serial'],
+              //     $arr['id'],
+              //     $types[$arr['type']],
+              //     str_pad($arr['pieces'], 2, '0', STR_PAD_LEFT),
+              //     str_pad($arr['rooms'], 2, '0', STR_PAD_LEFT),
+              //     $arr['surface'],
+              //     $arr['price'],
+              //     utf8_encode($arr['city']),
+              //     utf8_encode($arr['name']),
+              //     $arr['id'],
+              //     $arr['id'],
+              //     $arr['id'],
+              //     $arr['id']
+              //   );
+              // }
+             ?>
+        </div>
+    </section>
 </main>
+<div id="add" class="popup">
+  <div class="popup__content">
+    <section class="add_form">
+        <h2 class="head_form">Ajouter un nouveau proprietaire</h2>
+        <form action="" method="post" name="new_owner" enctype="multipart/form-data">
+          <div>
+            <div class="sub">
+              <?php
+                // if (array_key_exists('surface', $data[0]['fail'])) {
+                //   echo '<p class="fail">Spécifiez la surface</p>';
+                // }
+              ?>
+              <input type="text" name="names" placeholder="Nom et prenom">
+            </div>
+            <div class="sub">
+              <?php
+                // if (array_key_exists('surface', $data[0]['fail'])) {
+                //   echo '<p class="fail">Spécifiez la surface</p>';
+                // }
+              ?>
+              <input type="tel" name="phone" placeholder="Ex: 0700272700">
+            </div>
+            <div class="buttons">
+              <div>
+                <a href="#" class="reset">Annuler</a>
+                <input type="submit" class="submit" name="submit" value="Enregistrer">
+              </div>
+            </div>
+          </div>
+          <div></div>
+        </form>
+  </div>
+</div>
 <div id="options" class="popup">
     <div class="popup__closer">
         <a href="#">&times;</a>
