@@ -6,6 +6,7 @@ class Message {
     private static $ERRORS = array();
     private static $SUCESS = array();
 
+
     public static function error(array $error){
 
         foreach ($error as $key => $value){
@@ -34,5 +35,12 @@ class Message {
         return self::$SUCESS;
 
     }
+
+    public static function errorClean(){
+
+        return (count(self::$ERRORS) === 0) ? true : false;
+
+    }
+
 
 }

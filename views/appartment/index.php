@@ -175,8 +175,11 @@ if (Session::get('email') === null) {
               ?>
               <select name="owner" id="owner">
                   <option value="0">Propriétaire</option>
-                  <option value="1">Abell</option>
-                  <option value="2">Joseph</option>
+                  <?php
+                    foreach ($data[2] as $arr) {
+                        echo sprintf('<option value="%d">%s</option>', $arr['id'], $arr['name']);
+                    }
+                  ?>
               </select>
               <a href="owners" class="add_owner">Nouveau propriétaire</a>
           </div>

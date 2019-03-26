@@ -10,8 +10,11 @@ class ownerModel extends Database {
   }
 
   public function getAll(){
-    $this->
+    return $this->all(array());
+  }
 
+  public function create($columns, $values){
+      return $this->insert($columns, $values);
   }
 
 }

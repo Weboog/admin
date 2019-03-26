@@ -58,7 +58,7 @@ if (Session::get('email') === null) {
     </nav>
     <h2 class="head-2">Liste des proprietaires</h2>
     <section class="data">
-        <div class="table">
+        <div class="table owner_list">
             <!--/////////////////////////////////////////////  -->
             <h3 class="thead">Id</h3>
             <h3 class="thead">Noms</h3>
@@ -72,12 +72,7 @@ if (Session::get('email') === null) {
                     'maison' => 'Mas'
             );
             $row = '
-            <div class="trow trow__id"><a href="http://locatia.web/appartments/details/%d%d" target="_blank">#%d%d</a></div>
-            <div class="trow">%s</div>
-            <div class="trow">%s</div>
-            <div class="trow">%s</div>
-            <div class="trow">%d m<sup>2</sup></div>
-            <div class="trow">%d dh</div>
+            <div class="trow trow__id">%d</div>
             <div class="trow">%s</div>
             <div class="trow">%s</div>
             <div class="trow">
@@ -99,26 +94,18 @@ if (Session::get('email') === null) {
                     <span class="actions_label">Supprimer</span></a></li>
             </ul>
             </div>';
-              // foreach ($data[1] as $arr) {
-              //   echo sprintf(
-              //     $row,
-              //     $arr['serial'],
-              //     $arr['id'],
-              //     $arr['serial'],
-              //     $arr['id'],
-              //     $types[$arr['type']],
-              //     str_pad($arr['pieces'], 2, '0', STR_PAD_LEFT),
-              //     str_pad($arr['rooms'], 2, '0', STR_PAD_LEFT),
-              //     $arr['surface'],
-              //     $arr['price'],
-              //     utf8_encode($arr['city']),
-              //     utf8_encode($arr['name']),
-              //     $arr['id'],
-              //     $arr['id'],
-              //     $arr['id'],
-              //     $arr['id']
-              //   );
-              // }
+               foreach ($data as $arr) {
+                 echo sprintf(
+                   $row,
+                   $arr['id'],
+                   utf8_encode($arr['name']),
+                   $arr['phone'],
+                     $arr['id'],
+                     $arr['id'],
+                     $arr['id']
+                 );
+                 //print_r($arr);
+               }
              ?>
         </div>
     </section>
@@ -135,24 +122,25 @@ if (Session::get('email') === null) {
                 //   echo '<p class="fail">Spécifiez la surface</p>';
                 // }
               ?>
-              <input type="text" name="names" placeholder="Nom et prenom">
-            </div>
-            <div class="sub">
-              <?php
-                // if (array_key_exists('surface', $data[0]['fail'])) {
-                //   echo '<p class="fail">Spécifiez la surface</p>';
-                // }
-              ?>
-              <input type="tel" name="phone" placeholder="Ex: 0700272700">
-            </div>
-            <div class="buttons">
-              <div>
-                <a href="#" class="reset">Annuler</a>
-                <input type="submit" class="submit" name="submit" value="Enregistrer">
-              </div>
+              <input type="text" name="name" placeholder="Nom et prenom">
             </div>
           </div>
-          <div></div>
+          <div>
+              <div class="sub">
+                  <?php
+                  // if (array_key_exists('surface', $data[0]['fail'])) {
+                  //   echo '<p class="fail">Spécifiez la surface</p>';
+                  // }
+                  ?>
+                  <input type="tel" name="phone" placeholder="Ex: 0700272700">
+              </div>
+          </div>
+            <div class="buttons">
+                <div>
+                    <a href="#" class="reset">Annuler</a>
+                    <input type="submit" class="submit" name="submit" value="Enregistrer">
+                </div>
+            </div>
         </form>
   </div>
 </div>

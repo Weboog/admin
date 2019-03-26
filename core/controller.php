@@ -12,8 +12,13 @@ class Controller
         echo $content;
     }
 
-    public function getModel() {
-        $model = strtolower(get_class($this)) . 'Model';
+    public function getModel($name = null) {
+
+        if (is_null($name)) {
+            $model = strtolower(get_class($this)) . 'Model';
+        }else{
+            $model = $name . 'Model';
+        }
         require_once MODELS . DS . $model . '.php';
         return new $model();
     }

@@ -8,6 +8,8 @@ class Widget
     private $_type;
     public static $TYPE_EMAIL ='email';
     public static $TYPE_PASSWORD = 'password';
+    public static $TYPE_NAME = 'name';
+    public static $TYPE_PHONE = 'phone';
 
     public function __construct($type, $value)
     {
@@ -32,6 +34,20 @@ class Widget
 
             case self::$TYPE_PASSWORD:
                 if (preg_match('#^([a-z0-9](-._)*){6,}$#i', $this->_value)){
+                    return $this->_value;
+                }else{
+                    return false;
+                }
+                break;
+            case self::$TYPE_NAME:
+                if (preg_match('#[a-zA-Z]( )*#i', $this->_value)){
+                    return $this->_value;
+                }else{
+                    return false;
+                }
+                break;
+            case self::$TYPE_PHONE:
+                if (preg_match('#0[6|7]{1,}([0-9]{2,}( )?){4,}#', $this->_value)){
                     return $this->_value;
                 }else{
                     return false;

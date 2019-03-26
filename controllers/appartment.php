@@ -12,7 +12,8 @@ class Appartment extends Controller
     public function index(){
       $status = $this->add();
       $apparts = $this->all();
-      $this->render('index', array($status, $apparts));
+      $owners = $this->getModel('owner')->getAll();
+      $this->render('index', array($status, $apparts, $owners));
     }
 
     public function all(){

@@ -264,6 +264,9 @@
       }
     }
   }
+  .owner_list{
+    grid-template-columns: repeat(4, auto);
+  }
   .newsletter, .callback{
     .actions_menu{
       justify-content: center;

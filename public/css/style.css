@@ -562,6 +562,8 @@ header {
         fill: #4169E1; }
       .data .table .actions_menu li:last-of-type .actions_icon {
         fill: #FF1945; }
+  .data .owner_list {
+    grid-template-columns: repeat(4, auto); }
   .data .newsletter .actions_menu, .data .callback .actions_menu {
     justify-content: center; }
   .data .actions_icon {

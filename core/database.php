@@ -11,7 +11,7 @@ abstract class Database {
     private static $DEFAULT_COLUMN = 'id';
     private static $DEFAULT_ORDER_BY = 'id';
     private static $DEFAULT_SENSE = 'ASC';
-    private static $LIMIT = 'limit';
+    private static $LIMIT_KEYWORD = 'limit';
     private static $DEFAULT_LIMIT_START = 0;
     private static $DEFAULT_LIMIT_COUNT = 100;
 
@@ -55,7 +55,7 @@ abstract class Database {
             $limit_count = $options['limit']['count'];
         }
         $pdo = $this->getInstance();
-        $req = sprintf('select * from %s order by %s %s %s %d,%d', $this->_table,$order_by, $sense, $limit_start, $limit_count);
+        $req = sprintf('select * from %s order by %s %s limit %d,%d', $this->_table,$order_by, $sense, $limit_start, $limit_count);
         $stm = $pdo->query($req);
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
