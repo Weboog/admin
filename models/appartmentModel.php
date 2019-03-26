@@ -24,6 +24,10 @@ class appartmentModel extends Database
         return $this->find($options);
     }
 
+    public function getWholeApart($id){
+        return $this->wholeApart($id);
+    }
+
     public function create(array $columns, array $params){
         return $this->insert($columns, $params);
     }

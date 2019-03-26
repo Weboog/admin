@@ -87,17 +87,17 @@ if (Session::get('email') === null) {
                 <div class="trow">%s</div>
                 <div class="trow">
                     <ul class="actions_menu">
-                    <li><a href="#view_appart" data-id="%d">
+                    <li><a href="#blank" class="actions_menu_button" data-id="%d">
                         <svg class="actions_icon">
                             <use href="public/img/sprite.svg#details"></use>
                         </svg>
                         <span class="actions_label">Détails</span></a></li>
-                    <li><a href="#edit_appart" data-id="%d">
+                    <li><a href="#edit_appart" class="actions_menu_button data-id="%d">
                         <svg class="actions_icon">
                             <use href="public/img/sprite.svg#edit"></use>
                         </svg>
                         <span class="actions_label">éditer</span></a></li>
-                    <li><a href="#delete_appart" data-id="%d">
+                    <li><a href="#delete_appart" class="actions_menu_button data-id="%d">
                         <svg class="actions_icon">
                             <use href="public/img/sprite.svg#trash"></use>
                         </svg>
@@ -118,6 +118,7 @@ if (Session::get('email') === null) {
                       $arr['price'],
                       utf8_encode($arr['city']),
                       utf8_encode($arr['name']),
+                      $arr['id'],
                       $arr['id'],
                       $arr['id'],
                       $arr['id']
@@ -370,6 +371,12 @@ if (Session::get('email') === null) {
   </section>
 </div>
 </div>
+
+    <div id="blank" class="popup">
+        <div class="popup__content">
+
+        </div>
+    </div>
 
     <!--///////////////////////////////////////////-->
     <!-- <div class="element" id="delete_appart">

@@ -39,6 +39,19 @@
       
     }
   }
+  &__loading{
+    padding: 3rem;
+    //background-color: white;
+    border-radius: 5px;
+    color: $color-black;
+    font-size: 1.4rem;
+    background-image: url(../img/loading.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    width: 5rem;
+    height: 5rem;
+  }
   &__names{
     text-transform: uppercase;
     text-align: center;

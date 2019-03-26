@@ -177,4 +177,27 @@ window.addEventListener('load', function () {
         });
     })
 
+    //:::::::::::::::::::::::::::::::::::::::::::::::::://
+    //LOAD APARTMENT DETAILS
+
+    let btnDetails = document.querySelectorAll('.actions_menu_button');
+    let popup = document.querySelector('#blank .popup__content');
+
+    function loadApartDetails(e){
+        popup.innerHTML = '<div class="popup__loading"></div>';
+        //e.preventDefault();
+        let id = this.dataset.id;
+        AJAX.get(
+            `/appartment/get/${id}`,
+            function (data) {
+                popup.innerHTML = data;
+            }
+        )
+    }
+    btnDetails.forEach(function (btn) {
+        btn.addEventListener('click', loadApartDetails)
+    });
+
+
+
 });

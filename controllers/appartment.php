@@ -23,8 +23,11 @@ class Appartment extends Controller
 
     public function get($id){
         $model = $this->getModel();
-        $options = array('column' => array('name' => 'id', 'value' => $id), 'order_by' => 'id', 'sense' => 'ASC', 'limit' => array('start' => 0, 'count' => 100));
-        $model->getBy($options);
+        //$options = array('column' => array('name' => 'id', 'value' => $id), 'order_by' => 'id', 'sense' => 'ASC', 'limit' => array('start' => 0, 'count' => 100));
+        //$result = $model->getBy($options);
+        $result = $model->getWholeApart($id);
+        //sleep(1);
+        $this->render('view', $result);
     }
 
     public function add(){

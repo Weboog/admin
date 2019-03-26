@@ -603,6 +603,17 @@ header {
     .popup__content .fail {
       color: red;
       font-size: 1.2rem; }
+  .popup__loading {
+    padding: 3rem;
+    border-radius: 5px;
+    color: #363636;
+    font-size: 1.4rem;
+    background-image: url(../img/loading.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    width: 5rem;
+    height: 5rem; }
   .popup__names {
     text-transform: uppercase;
     text-align: center;
