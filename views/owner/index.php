@@ -11,7 +11,7 @@ if (Session::get('email') === null) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./public/css/style.css">
-    <script src="./public/js/main.js" type="text/javascript"></script>
+    <script src="./public/js/owner.js" type="text/javascript"></script>
     <title>LOCATIA</title>
 </head>
 <body>
@@ -59,6 +59,7 @@ if (Session::get('email') === null) {
     <h2 class="head-2">Liste des proprietaires</h2>
     <section class="data">
         <div class="table owner_list">
+
             <!--/////////////////////////////////////////////  -->
             <h3 class="thead">Id</h3>
             <h3 class="thead">Noms</h3>
@@ -94,7 +95,7 @@ if (Session::get('email') === null) {
                     <span class="actions_label">Supprimer</span></a></li>
             </ul>
             </div>';
-               foreach ($data as $arr) {
+               foreach ($data[0] as $arr) {
                  echo sprintf(
                    $row,
                    $arr['id'],
@@ -113,14 +114,19 @@ if (Session::get('email') === null) {
 <div id="add" class="popup">
   <div class="popup__content">
     <section class="add_form">
-        <h2 class="head_form">Ajouter un nouveau proprietaire</h2>
         <form action="" method="post" name="new_owner" enctype="multipart/form-data">
+          <h2 class="head_form">Ajouter un nouveau proprietaire</h2>
+          <?php
+            if ( array_key_exists( 'owner', Message::getSuccess() )) {
+              echo sprintf('<p class="message success">%s</p>', Message::showSuccess('owner'));
+            }
+          ?>
           <div>
             <div class="sub">
               <?php
-                // if (array_key_exists('surface', $data[0]['fail'])) {
-                //   echo '<p class="fail">Spécifiez la surface</p>';
-                // }
+                if (array_key_exists('name', Message::getErrors())) {
+                  echo sprintf('<p class="fail">%s</p>', Message::showError('name'));
+                }
               ?>
               <input type="text" name="name" placeholder="Nom et prenom">
             </div>
@@ -128,9 +134,9 @@ if (Session::get('email') === null) {
           <div>
               <div class="sub">
                   <?php
-                  // if (array_key_exists('surface', $data[0]['fail'])) {
-                  //   echo '<p class="fail">Spécifiez la surface</p>';
-                  // }
+                  if (array_key_exists('phone', Message::getErrors())) {
+                    echo sprintf('<p class="fail">%s</p>', Message::showError('phone'));
+                  }
                   ?>
                   <input type="tel" name="phone" placeholder="Ex: 0700272700">
               </div>

@@ -151,20 +151,20 @@ if (Session::get('email') === null) {
 
 <div id="add" class="popup">
 <div class="popup__content">
-  <?php
-  if (isset($data)) {
-    if (count($data[0]['fail']) > 0) {
-        $status = 'fail';
-    }
-    if (count($data[0]['success']) > 0) {
-        $status = 'success';
-        echo sprintf('<p class="message %s">%s</p>', $status, $data[0]['success'][0]);
-    }
-  }
-  ?>
   <section class="add_form">
-      <h2 class="head_form">Ajouter un nouvel appartement</h2>
       <form action="" method="post" name="new_appart" enctype="multipart/form-data">
+        <h2 class="head_form">Ajouter un nouvel appartement</h2>
+        <?php
+        if (isset($data)) {
+          if (count($data[0]['fail']) > 0) {
+              $status = 'fail';
+          }
+          if (count($data[0]['success']) > 0) {
+              $status = 'success';
+              echo sprintf('<p class="message %s">%s</p>', $status, $data[0]['success'][0]);
+          }
+        }
+        ?>
         <div>
           <div class="owner">
               <h3 class="group_label">Propriétaire</h3>
@@ -362,14 +362,13 @@ if (Session::get('email') === null) {
                 <div class="sample_images"></div>
             </div>
           </div>
-          <div class="buttons">
-            <div>
-              <a href="#" class="reset">Annuler</a>
-              <input type="submit" class="submit" name="submit" value="Enregistrer">
-            </div>
+        </div>
+        <div class="buttons">
+          <div>
+            <a href="#" class="reset">Annuler</a>
+            <input type="submit" class="submit" name="submit" value="Enregistrer">
           </div>
         </div>
-
       </form>
   </section>
 </div>

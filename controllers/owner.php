@@ -6,7 +6,8 @@
 class Owner extends Controller {
 
   public function index() {
-    $this->render('index', $this->all());
+    $this->add();
+    $this->render('index', array($this->all()));
   }
 
   public function all(){
@@ -21,17 +22,23 @@ class Owner extends Controller {
           $phone = new Widget(Widget::$TYPE_PHONE, $_POST['phone']);
 
           if (!$name->is_valid()){
-              Message::error(array('noms' => 'Utiliser des alpahbets et des espaces'));
+              Message::error(array('name' => 'Utiliser des alpahbets et des espaces'));
           }
 
           if (!$phone->is_valid()){
-              Message::error(array('telephone' => 'Format incorrect'));
+              Message::error(array('phone' => 'Format de numero incorrect'));
           }
 
           if (Message::errorClean()){
               $columns = array('name', 'phone');
-              $values = array($name, $phone);
-              return $this->getModel()->create($columns, $values);
+              $values = array(
+                $this->quote($name->getValue()),
+                $this->quote($phone->getValue())
+              );
+              $id = $this->getModel()->create($columns, $values);
+              if ($id > 0) {
+                Message::success(array('owner' => 'Proprietaire ajoute avec succes'));
+              }
           }
       }
 

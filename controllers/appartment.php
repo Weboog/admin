@@ -132,8 +132,4 @@ class Appartment extends Controller
         return $status;
     }
 
-    private function quote($variable){
-        return "'$variable'";
-    }
-
 }

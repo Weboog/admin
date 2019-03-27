@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Cuprum:400,700|Roboto+Condensed:300,400,700|Open+Sans:400,600");
 @font-face {
   font-family: "Cuprum";
   src: url("/fonts/Cuprum-Regular.woff");
@@ -351,21 +352,6 @@ header {
   @media only screen and (max-width: 29em) {
     .content {
       margin-left: 7rem; } }
-  .content .message {
-    justify-self: center;
-    font-size: 1.5rem;
-    padding: 1rem;
-    border-radius: 3px;
-    margin-top: 5rem;
-    border: 1px solid grey; }
-    .content .message.success {
-      color: #3a5319;
-      background-color: #d3e9b5;
-      border-color: #71a230; }
-    .content .message.fail {
-      color: #7f0c23;
-      background-color: #f7abba;
-      border-color: #ad102f; }
 
 .navigation {
   background-color: #363636;
@@ -508,7 +494,7 @@ header {
       border-bottom: 1px dashed #DDD;
       padding: 0 0 0.5rem; }
     .data .table .trow {
-      font-family: "open_regular", sans-serif;
+      font-family: "Open Sans", sans-serif;
       align-self: center;
       font-size: 1.3rem;
       color: #555;
@@ -602,6 +588,16 @@ header {
     border-radius: 5px;
     padding: 2rem 0;
     color: white; }
+    .popup__content .success {
+      grid-column: 1 / -1;
+      justify-self: center;
+      color: #567b24;
+      background-color: #d3e9b5;
+      border: 1px solid #71a230;
+      border-radius: 3px;
+      padding: .5rem 1.5rem;
+      font-size: 1.4rem;
+      font-family: "Open Sans", sans-serif; }
     .popup__content .fail {
       color: red;
       font-size: 1.2rem; }
@@ -785,7 +781,8 @@ header {
   .add_form .buttons {
     display: grid;
     align-items: end;
-    justify-items: end; }
+    justify-items: end;
+    grid-column: 1 / -1; }
     .add_form .buttons div {
       display: grid;
       align-items: center;
@@ -804,7 +801,7 @@ header {
       border-radius: 3px;
       cursor: pointer; }
   .add_form textarea {
-    font-family: "open_regular", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 1.2rem; }
   .add_form form {
@@ -836,11 +833,14 @@ header {
     .add_form .guide p {
       font-size: 1.5rem; }
   .add_form .head_form {
-    grid-column: 1 / 2;
+    grid-column: 1 / -1;
     grid-row: 1 / 2;
     text-transform: uppercase;
     text-align: center;
-    font-size: 2rem; }
+    font-size: 1.7rem;
+    color: #363636;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100; }
   .add_form .group_label {
     grid-column: 1 / -1;
     grid-row: span 2;

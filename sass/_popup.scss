@@ -33,10 +33,20 @@
     border-radius: 5px;
     padding: 2rem 0;
     color: white;
+    .success{
+      grid-column: 1 / -1;
+      justify-self: center;
+      color: darken($color-green, 20%);
+      background-color: lighten($color-green, 30%);
+      border: 1px solid darken($color-green, 10%);
+      border-radius: 3px;
+      padding: .5rem 1.5rem;
+      font-size: 1.4rem;
+      font-family: $font-opensans;
+    }
     .fail{
       color: red;
       font-size: 1.2rem;
-      
     }
   }
   &__loading{

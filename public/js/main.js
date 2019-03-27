@@ -150,7 +150,7 @@ window.addEventListener('load', function () {
     let form = document.forms.namedItem('new_appart');
     let cancel = document.querySelector('.reset');
     function resetForm(){
-      let messages = document.querySelectorAll('p.fail');
+      let messages = document.querySelectorAll('p.fail, p.success');
       let labels = document.querySelectorAll('label');
       messages.forEach(function(message) {
         message.remove();

@@ -23,6 +23,10 @@ class Controller
         return new $model();
     }
 
+    protected function quote($variable){
+        return "'$variable'";
+    }
+
     public static function pre(array $array){
         echo '<pre>';
         print_r($array);

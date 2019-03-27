@@ -36,6 +36,18 @@ class Message {
 
     }
 
+    public static function showError($key){
+      if (array_key_exists( $key, self::$ERRORS)) {
+        return self::$ERRORS[$key];
+      }
+    }
+
+    public static function showSuccess($key){
+      if (array_key_exists( $key, self::$SUCESS)) {
+        return self::$SUCESS[$key];
+      }
+    }
+
     public static function errorClean(){
 
         return (count(self::$ERRORS) === 0) ? true : false;
