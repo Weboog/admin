@@ -772,6 +772,7 @@ header {
   justify-content: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); }
   .add_form select, .add_form input, .add_form textarea {
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border: none;
     border-bottom: 1px solid #e1e1e1;
@@ -803,7 +804,7 @@ header {
   .add_form textarea {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
-    font-size: 1.2rem; }
+    font-size: 1.3rem; }
   .add_form form {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
