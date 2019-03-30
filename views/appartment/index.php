@@ -31,8 +31,7 @@ if (Session::get('email') === null) {
                     </a>
                 </li>
             </ul>
-            <div class="search">
-                <!-- //////////////////////////////////////////////// -->
+            <!-- <div class="search">
                 <div class="select">
                     <div class="selected">
                         <span data-value="1" class="label_selected">IDENTIFIANT</span>
@@ -54,7 +53,7 @@ if (Session::get('email') === null) {
                         </svg>
                     </button>
                 </form>
-            </div>
+            </div> -->
         </nav>
         <h2 class="head-2">Affichage de 30 / 125 appartements</h2>
         <section class="data">
@@ -77,7 +76,7 @@ if (Session::get('email') === null) {
                         'maison' => 'Mas'
                 );
                 $row = '
-                <div class="trow trow__id"><a href="http://locatia.web/appartments/details/%d%d" target="_blank">#%d%d</a></div>
+                <div class="trow trow__id"><a href="http://locatia.ma/appartments/details/%d%d" target="_blank">#%d%d</a></div>
                 <div class="trow">%s</div>
                 <div class="trow">%s</div>
                 <div class="trow">%s</div>
@@ -181,7 +180,7 @@ if (Session::get('email') === null) {
                     }
                   ?>
               </select>
-              <a href="owners" class="add_owner">Nouveau propriétaire</a>
+              <a href="/owner#add" class="add_owner">Nouveau propriétaire</a>
           </div>
           <div class="address">
               <h3 class="group_label">Adresse</h3>

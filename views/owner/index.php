@@ -30,38 +30,37 @@ if (Session::get('email') === null) {
                     Ajouter
                 </a>
             </li>
-        </ul>
-        <div class="search">
-            <!-- //////////////////////////////////////////////// -->
-            <div class="select">
+            <!-- <div class="search">
+              <div class="select">
                 <div class="selected">
-                    <span data-value="1" class="label_selected">TITRE</span>
-                    <svg class="arrow">
-                        <use href="public/img/sprite.svg#down"></use>
-                    </svg>
-                    <ul id="select" class="hide_options">
-                        <li><a class="option_item" data-id="1" href="#"><span>Titre</span></a></li>
-                        <li><a class="option_item" data-id="2" href="#"><span>Contenu</span></a></li>
-                        <li><a class="option_item" data-id="3" href="#"><span>Date</span></a></li>
-                    </ul>
+                  <span data-value="1" class="label_selected">TITRE</span>
+                  <svg class="arrow">
+                    <use href="public/img/sprite.svg#down"></use>
+                  </svg>
+                  <ul id="select" class="hide_options">
+                    <li><a class="option_item" data-id="1" href="#"><span>Titre</span></a></li>
+                    <li><a class="option_item" data-id="2" href="#"><span>Contenu</span></a></li>
+                    <li><a class="option_item" data-id="3" href="#"><span>Date</span></a></li>
+                  </ul>
                 </div>
-            </div>
-            <form>
+              </div>
+              <form>
                 <input type="search" class="input_text" name="search" placeholder="">
                 <button class="btn">
-                    <svg>
-                        <use href="public/img/sprite.svg#search"></use>
-                    </svg>
+                  <svg>
+                    <use href="public/img/sprite.svg#search"></use>
+                  </svg>
                 </button>
-            </form>
-        </div>
-    </nav>
+              </form>
+            </div> -->
+          </nav>
+        </ul>
     <h2 class="head-2">Liste des proprietaires</h2>
     <section class="data">
         <div class="table owner_list">
 
             <!--/////////////////////////////////////////////  -->
-            <h3 class="thead">Id</h3>
+            <h3 class="thead">Identifiant</h3>
             <h3 class="thead">Noms</h3>
             <h3 class="thead">Telephone</h3>
             <h3 class="thead">Actions</h3>

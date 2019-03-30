@@ -11,7 +11,7 @@
                     <use href="public/img/sprite.svg#user"></use>
                 </svg>
                 <span class="nav__text">Propriétaires</span></a></li>
-        <li><a href="callback">
+        <!-- <li><a href="callback">
                 <svg class="nav__icon nav__icon--crimson">
                     <use href="public/img/sprite.svg#headset"></use>
                 </svg>
@@ -20,7 +20,7 @@
                 <svg class="nav__icon nav__icon--blue">
                     <use href="public/img/sprite.svg#send"></use>
                 </svg>
-                <span class="nav__text">Newsletters</span></a></li>
+                <span class="nav__text">Newsletters</span></a></li> -->
     </ul>
     <p class="copyright">
         &copy;LOCATIA 2019 ALL RIGHTS RESERVED.
