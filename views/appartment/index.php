@@ -374,9 +374,10 @@ if (Session::get('email') === null) {
 </div>
 
     <div id="blank" class="popup">
-        <div class="popup__content">
-
-        </div>
+      <div class="popup__closer">
+          <a href="#">&times;</a>
+      </div>
+        <div class="popup__content"></div>
     </div>
 
     <!--///////////////////////////////////////////-->
